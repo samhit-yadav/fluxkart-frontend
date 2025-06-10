@@ -1,12 +1,43 @@
-# React + Vite
+# FluxKart - Contact Identity Resolution API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack application for contact identity resolution based on email addresses and phone numbers.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend: https://fluxkart-frontend.vercel.app
+- Backend API: https://fluxkart-backend-02yd.onrender.com
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend: Java, Spring Boot, PostgreSQL, Maven  
+Frontend: React, Vite, JavaScript  
+Deployment: Render (Backend), Vercel (Frontend)
+
+## 📚 API Endpoints
+
+### GET /
+Health check endpoint
+
+### POST /identify
+Identify and resolve contact information
+
+Request:
+json
+{
+  "email": "john.doe@example.com",
+  "phoneNumber": "1234567890"
+}
+
+
+Response:
+json
+{
+  "contact": {
+    "primaryContactId": 1,
+    "emails": ["john.doe@example.com"],
+    "phoneNumbers": ["1234567890"],
+    "secondaryContactIds": []
+  }
+}
+
+
